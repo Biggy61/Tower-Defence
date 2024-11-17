@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FriendlyRange : MonoBehaviour
@@ -8,7 +6,7 @@ public class FriendlyRange : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public float characterSpeed;
-    // Start is called before the first frame update
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -18,8 +16,7 @@ public class FriendlyRange : MonoBehaviour
     void Update()
     {
         animator.SetTrigger("Walk");
-        rb.velocity = new Vector2(characterSpeed, rb.velocity.y);
-     if(hp <= 0) { Destroy(this.gameObject); }   
+        rb.linearVelocity = new Vector2(characterSpeed, rb.linearVelocity.y);
+        if(hp <= 0) { Destroy(this.gameObject); }   
     }
-    
 }
