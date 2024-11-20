@@ -8,7 +8,9 @@ public class Shop : MonoBehaviour
 {
     public GameObject coins;
     private float _coin;
-   
+    public GameObject friendlyRange;
+    public Transform friendlySpawn;
+    public GameObject friendlyMelee;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class Shop : MonoBehaviour
         {
             coins.GetComponent<Coins>().coins -= 100;
             Debug.Log("Click"); 
+            Instantiate(friendlyRange, friendlySpawn.position, Quaternion.identity);
         }
     }
     public void BuyMelee()
@@ -34,6 +37,7 @@ public class Shop : MonoBehaviour
         {
             coins.GetComponent<Coins>().coins -= 50;
             Debug.Log("Click"); 
+            Instantiate(friendlyMelee, friendlySpawn.position, Quaternion.identity);
         }
     }
 
