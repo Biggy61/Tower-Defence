@@ -17,7 +17,7 @@ public class EnemyRange : MonoBehaviour
     void Update()
     {
         animator.SetTrigger("Walk");
-        rb.linearVelocity = new Vector2(characterSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(-characterSpeed, rb.linearVelocity.y);
      if(hp <= 0) { Destroy(this.gameObject); }   
     }
     
