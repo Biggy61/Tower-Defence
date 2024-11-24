@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8301317252215197339}
   - component: {fileID: 6493029476624435528}
   - component: {fileID: 2022636032190755534}
-  m_Layer: 0
-  m_Name: EnemyMelee
+  m_Layer: 6
+  m_Name: FriendlyMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658686718781982503}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.008726465, y: 0, z: 0, w: 0.999962}
   m_LocalPosition: {x: 394.7208, y: 219.9, z: -0.12701729}
   m_LocalScale: {x: 248.85104, y: 262.6928, z: 2.2993}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1, y: 0, z: 0}
 --- !u!95 &7625295632089770584
 Animator:
   serializedVersion: 7
