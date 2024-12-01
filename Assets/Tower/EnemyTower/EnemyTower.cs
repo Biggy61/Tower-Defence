@@ -15,15 +15,6 @@ public class EnemyTower : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            hp -= 10;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            hp += 10;
-        }
 
         healthBar.SetHealth(hp);
     }
