@@ -6,8 +6,8 @@ public class EnemySpawn : MonoBehaviour
     public Transform melleSpawn;
     public Transform rangeSpawn;
     public GameObject enemyMelee;
-    private float _meleeSpawnInterval = 5;
-    private float _rangeSpawnInterval = 14;
+    private float _meleeSpawnInterval = 10;
+    private float _rangeSpawnInterval = 20;
     private float _currentMeleeSpawnTime = 0;
     private float _currentRangeSpawnTime = 0;
     private float _bigCountdown = 60;

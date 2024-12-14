@@ -85,7 +85,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!70 &2688817561645722549
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -192,14 +192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   rb: {fileID: 329684767918087250}
-  fmelee: {fileID: 0}
   animator: {fileID: 8195562306181962045}
   characterSpeed: 22
-  melee:
-  - {fileID: 0}
-  range:
-  - {fileID: 0}
-  tower: {fileID: 0}
+  enemyMelee: {fileID: 0}
 --- !u!1 &4284286029757188835
 GameObject:
   m_ObjectHideFlags: 0
