@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 134187287743803120}
   m_Layer: 6
   m_Name: FriendlyRange
-  m_TagString: Untagged
+  m_TagString: FriendlyRange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!70 &7031430430820810086
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
