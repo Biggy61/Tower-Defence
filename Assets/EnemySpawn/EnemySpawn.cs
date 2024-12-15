@@ -7,10 +7,10 @@ public class EnemySpawn : MonoBehaviour
     public Transform rangeSpawn;
     public GameObject enemyMelee;
     private float _meleeSpawnInterval = 10;
-    private float _rangeSpawnInterval = 20;
+    private float _rangeSpawnInterval = 25;
     private float _currentMeleeSpawnTime = 0;
     private float _currentRangeSpawnTime = 0;
-    private float _bigCountdown = 60;
+    private float _bigCountdown = 30;
     private float _currentBigTime = 0;
 
     // Start is called before the first frame update
@@ -39,8 +39,8 @@ public class EnemySpawn : MonoBehaviour
 
         if (_currentBigTime >= _bigCountdown)
         {
-            _meleeSpawnInterval -= .1f;
-            _rangeSpawnInterval -= .1f;
+            _meleeSpawnInterval -= 1f;
+            _rangeSpawnInterval -= 1f;
             _currentBigTime = 0;
         }
     }

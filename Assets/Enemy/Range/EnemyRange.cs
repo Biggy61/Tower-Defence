@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyRange : MonoBehaviour
@@ -9,51 +7,72 @@ public class EnemyRange : MonoBehaviour
     public Animator animator;
     public float characterSpeed;
     private float _Timer;
-    // Start is called before the first frame update
+    public Transform range;
+    public LayerMask layer;
+
+    public float attackRange;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
+
     // Update is called once per frame
     void Update()
     {
-        animator.SetTrigger("Walk");
         _Timer += Time.deltaTime;
-        rb.linearVelocity = new Vector2(-characterSpeed, rb.linearVelocity.y);
-     if(hp <= 0) { Destroy(this.gameObject); }   
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        animator.SetTrigger("Attack");
-    }
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-        Debug.Log("BLud!");
+        Collider2D[] hit = Physics2D.OverlapCircleAll(range.position, attackRange, layer);
 
-        if (collision.gameObject.tag == "FriendlyMelee" && _Timer > 0.5f)
+        bool IsArrayEmpty()
         {
-            Debug.Log("Melee!");
-            collision.gameObject.GetComponent<FriendlyMelee>().hp -= 10;
-            _Timer = 0;
+            if (hit == null || hit.Length == 0) return true;
+            else return false;
         }
-        else if (collision.gameObject.tag == "FriendlyRange" && _Timer > 0.5f)
+
+        if (!IsArrayEmpty())
         {
-            Debug.Log("Range!");
-            collision.gameObject.GetComponent<FriendlyRange>().hp -= 10;
-            _Timer = 0;
+            foreach (Collider2D enemy in hit)
+            {
+                if (enemy.gameObject.tag == "FriendlyMelee" && _Timer > 0.5f)
+                {
+                    animator.SetTrigger("Attack");
+                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    enemy.GetComponent<FriendlyMelee>().hp -= 10;
+                    _Timer = 0;
+                }
+                else if (enemy.gameObject.tag == "FriendlyRange" && _Timer > 0.5f)
+                {
+                    animator.SetTrigger("Attack");
+                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    enemy.GetComponent<FriendlyRange>().hp -= 10;
+                    _Timer = 0;
+                }
+                else if (enemy.gameObject.tag == "FriendlyTower" && _Timer > 0.5f)
+                {
+                    animator.SetTrigger("Attack");
+                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    enemy.GetComponent<Tower.Tower>().hp -= 10;
+                    _Timer = 0;
+                }
+            }
         }
-        else if (collision.gameObject.tag == "MyTower" && _Timer > 0.5f)
+        else
         {
-            Debug.Log("Tower!");
-            collision.gameObject.GetComponent<Tower.Tower>().hp -= 10;
-            _Timer = 0;
+            animator.SetTrigger("Walk");
+            rb.linearVelocity = new Vector2(characterSpeed, rb.linearVelocity.y);
+        }
+
+
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+
+    private void OnDrawGizmosSelected()
     {
-        animator.SetTrigger("Walk");
+        Gizmos.DrawWireSphere(range.position, attackRange);
     }
-    
+  
 }

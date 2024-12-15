@@ -700,10 +700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2e4a3320da83a47a60b0b9039e6158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRange: {fileID: 163529546865707997, guid: 4a394466e79084141ba4cfe89c2c3cfb, type: 3}
+  enemyRange: {fileID: 7355599612302293506, guid: 6e3bc37bc80c090409859ca4165e5404, type: 3}
   melleSpawn: {fileID: 1079422031}
   rangeSpawn: {fileID: 973978017}
-  enemyMelee: {fileID: 6144534469802282006, guid: 343df9102c2b1754bae84b3c428aefcd, type: 3}
+  enemyMelee: {fileID: 8651073495146199507, guid: ba5c56fe6ee830b44b935338c0fbe7f3, type: 3}
 --- !u!1 &423168410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 356065683645216705, guid: b609a9f58964ceb4ea99550f3a693025, type: 3}
@@ -2743,7 +2743,7 @@ MonoBehaviour:
   coins: {fileID: 529314210}
   friendlyRange: {fileID: 0}
   friendlySpawn: {fileID: 2010030313}
-  friendlyMelee: {fileID: 2346011063273210374, guid: c8cef67d0cd7bfb4fb8cde46a926b5bd, type: 3}
+  friendlyMelee: {fileID: 647537887666052320, guid: 1636eb51378b30643adf91d4712aaa59, type: 3}
 --- !u!114 &2146013753
 MonoBehaviour:
   m_ObjectHideFlags: 0
