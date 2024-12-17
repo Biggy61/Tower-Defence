@@ -15,6 +15,10 @@ namespace Tower
         void Update()
         {
             healthBar.SetHealth(hp);
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

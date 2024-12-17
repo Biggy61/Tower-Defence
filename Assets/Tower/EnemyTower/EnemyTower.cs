@@ -15,7 +15,10 @@ public class EnemyTower : MonoBehaviour
 
     void Update()
     {
-
         healthBar.SetHealth(hp);
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

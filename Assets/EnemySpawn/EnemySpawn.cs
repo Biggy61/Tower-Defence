@@ -6,6 +6,7 @@ public class EnemySpawn : MonoBehaviour
     public Transform melleSpawn;
     public Transform rangeSpawn;
     public GameObject enemyMelee;
+    public GameObject tower;
     private float _meleeSpawnInterval = 10;
     private float _rangeSpawnInterval = 25;
     private float _currentMeleeSpawnTime = 0;
@@ -48,11 +49,17 @@ public class EnemySpawn : MonoBehaviour
 
     public void SpawnRange()
     {
-        Instantiate(enemyRange, rangeSpawn.position, Quaternion.identity);
+        if (tower.GetComponent<EnemyTower>().hp > 0)
+        { Instantiate(enemyRange, rangeSpawn.position, Quaternion.identity);}
+        
     }
 
     public void SpawnMelee()
     {
-        Instantiate(enemyMelee, melleSpawn.position, Quaternion.identity);
+        if (tower.GetComponent<EnemyTower>().hp > 0)
+        {
+            Instantiate(enemyMelee, melleSpawn.position, Quaternion.identity);
+        }
+      
     }
 }
